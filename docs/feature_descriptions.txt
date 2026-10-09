@@ -1,0 +1,98 @@
+PIECE - DATASET FEATURE DESCRIPTIONS
+====================================
+
+Dataset: vmr_all.csv
+Total features: 39
+Source: Kim, Chua & Hu (2025); public OSF dataset and analysis notebooks
+
+LABELS
+------
+[CODE]  Confirmed in the authors' analysis notebooks
+[PAPER] Supported by the published paper
+[INFER] Inferred from column name/context; exact definition needs verification
+
+1. PARTICIPANT & TRIAL INFORMATION
+----------------------------------
+si                        : Participant-related numeric index [INFER]
+SN                        : Subject number (participant grouping) [CODE]
+id                        : Participant identifier string [CODE]
+tester                    : Experimenter / tester code [INFER]
+TN                        : Trial number [CODE, PAPER]
+move_cycle                : Movement-cycle or trial-sequence number [INFER]
+
+2. HAND POSITION & MOVEMENT
+---------------------------
+hX                        : Recorded hand X-coordinate; sampling point unspecified [INFER]
+hY                        : Recorded hand Y-coordinate; sampling point unspecified [INFER]
+rot_hX                    : Rotation-transformed hand/cursor X-coordinate [INFER]
+rot_hY                    : Rotation-transformed hand/cursor Y-coordinate [INFER]
+hand_max_dist             : Maximum reach extent / distance [INFER]
+radvelmax                 : Maximum radial velocity [INFER]
+rot_hand_theta            : Rotation-related hand angle; exact transform unspecified [INFER]
+theta_maxradv             : Reach angle at peak radial velocity (degrees); operational IGE [PAPER, CODE]
+raw_ep_hand_ang           : Raw endpoint hand angle (degrees) [INFER]
+
+3. TARGET & PERTURBATION INFORMATION
+------------------------------------
+rotation                  : Applied visuomotor rotation (degrees); EGE [PAPER, CODE]
+tgt_jump                  : Target-jump angle (degrees); excluded from VMR-only analysis [PAPER, CODE]
+tgtX                      : Target X-coordinate [INFER]
+tgtY                      : Target Y-coordinate [INFER]
+tgt_ang                   : Target direction angle [INFER]
+tgt_dist                  : Target distance from start [INFER]
+fbi                       : Visual feedback condition code; fbi=1 denotes feedback in analysis [CODE]
+perturbation              : Flag selecting rotation/control events; can be True at rotation=0 [CODE]
+
+4. MOVEMENT TIMING
+------------------
+MT                        : Movement time; CSV unit should be verified [PAPER, INFER]
+RT                        : Reaction time; CSV unit should be verified [PAPER, INFER]
+ST                        : Timing field, possibly start/hold time; unverified [INFER]
+
+5. ERROR & ADAPTATION
+---------------------
+adaptation                : Change in reach angle: theta_clean[t+1] - theta_clean[t-1] (degrees) [PAPER, CODE]
+total error               : Total cursor-angle error: theta_maxradv_clean + rotation (degrees) [CODE]
+motor_sd                  : Baseline motor variability, used as sigma_h in PIECE [CODE, PAPER]
+extent_err                : Reach-extent error: hand_max_dist_clean - 90 (data units) [CODE]
+adaptation_ext            : Extent error change: extent_err[t+1] - extent_err[t-1] [CODE]
+
+6. OUTLIER DETECTION & PREPROCESSING
+------------------------------------
+theta_maxradv_z           : Participant-wise Z-score of reach angle [CODE]
+hand_max_dist_z           : Participant-wise Z-score of reach extent [CODE]
+theta_maxradv_outlier     : True if abs(angle Z) > 3.5 OR abs(extent Z) > 3.5 [CODE]
+hand_max_dist_outlier     : Same combined outlier rule as above [CODE]
+theta_maxradv_mean        : Subject-wise mean reach angle used in preprocessing [CODE]
+hand_max_dist_mean        : Subject-wise mean reach extent used in preprocessing [CODE]
+theta_maxradv_clean       : Reach angle after outliers are replaced by NaN [CODE]
+hand_max_dist_clean       : Reach extent after outliers are replaced by NaN [CODE]
+
+7. CORE VARIABLES FOR PIECE REPRODUCTION
+----------------------------------------
+SN                        : Participant-specific model fitting
+TN                        : Trial ordering for adaptation triplets
+rotation                  : Externally generated error (EGE)
+theta_maxradv_clean       : Trial-wise hand angle / operational IGE
+adaptation                : Observed adaptive response
+motor_sd                  : Measured baseline sigma_h
+perturbation              : Event selection, including zero-rotation controls
+total error               : Combined angular error (IGE + EGE)
+
+NOTES
+-----
+- This file documents 39 dataset columns, not 39 independent model inputs.
+- PIECE fits three parameters: sigma_r, sigma_combined, and b.
+- The paper uses baseline trials 21-70 (last 50 of 70) to estimate sigma_h.
+- Experimental rotation levels: -4, -2, 0, +2, +4 degrees.
+- 'total error' is an actual column name containing a space.
+- [INFER] entries should be checked against acquisition code before relying
+  on their precise physical or computational definitions.
+
+REFERENCE
+---------
+Kim, H. E., Chua, R., & Hu, D. (2025).
+Causal inference, prediction and state estimation in sensorimotor learning.
+Proceedings of the Royal Society B, 292, 20251320.
+https://doi.org/10.1098/rspb.2025.1320
+Original OSF repository: https://osf.io/pmqu5/
