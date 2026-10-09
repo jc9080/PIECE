@@ -23,3 +23,22 @@ The reproduction focuses on:
 - Comparing PIECE with alternative sensorimotor adaptation models (PReMo, PEA, and REM).
 
 Ultimately, this project seeks to validate the computational mechanisms underlying PIECE and establish a reproducible foundation for future extensions of Bayesian models of sensorimotor learning.
+## Experimental Design
+
+This project reproduces the PIECE model using the original experimental dataset from Kim et al. (2025).
+
+### Experimental Setup
+
+![Experimental Design](assets/experimental_design.svg)
+
+The experiment investigated how the sensorimotor system distinguishes between internally generated errors (IGE) and externally generated errors (EGE).
+
+Sixteen participants performed rapid reaching movements toward a visual target while controlling a cursor on a screen. The researchers introduced small visuomotor rotations of 0°, ±2°, and ±4° to examine how participants adapted their subsequent movements.
+
+### Experimental Procedure
+
+1. **Baseline:** Participants completed 70 unperturbed reaching trials.
+2. **Perturbation:** Visual cursor feedback was rotated relative to the actual hand movement.
+3. **Adaptation:** Changes in reaching direction were measured using trials immediately before and after each perturbation.
+4. **Analysis:** Adaptive responses to internally and externally generated errors were
+

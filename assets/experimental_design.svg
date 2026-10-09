@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="PIECE experiment illustration of rotation and trial-by-trial adaptation">
+<rect width="1200" height="720" fill="#f8fafc"/>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#17233a}.title{font-weight:700;font-size:30px}.sub{font-size:17px;fill:#53637b}.panel{fill:white;stroke:#dce4ee;stroke-width:2}.heading{font-size:22px;font-weight:700}.small{font-size:16px}.micro{font-size:14px;fill:#53637b}.blue{stroke:#2563eb}.red{stroke:#e04c4c}.gray{stroke:#8392aa}.dash{stroke-dasharray:7 7}</style>
+<text class="title" x="55" y="62">PIECE | Experimental design and error decomposition</text>
+<text class="sub" x="55" y="92">Participants reach toward a target while visual cursor feedback may be rotated</text>
+<rect class="panel" x="50" y="126" rx="18" width="523" height="400"/>
+<text class="heading" x="80" y="172">A. Internally vs externally generated error</text>
+<circle cx="270" cy="454" r="10" fill="#eab308"/><circle cx="270" cy="235" r="10" fill="#22c55e"/>
+<line x1="270" y1="444" x2="270" y2="248" class="gray dash" stroke-width="3"/>
+<line x1="270" y1="444" x2="311" y2="249" class="blue" stroke-width="5" stroke-linecap="round"/>
+<line x1="270" y1="444" x2="365" y2="268" class="red" stroke-width="5" stroke-linecap="round"/>
+<path d="M 284 378 A 67 67 0 0 1 298 384" fill="none" stroke="#2563eb" stroke-width="2"/>
+<path d="M 314 348 A 113 113 0 0 1 335 361" fill="none" stroke="#e04c4c" stroke-width="2"/>
+<text class="small" x="80" y="239">Target</text><text class="micro" x="80" y="262">Intended direction</text><text class="small" x="321" y="235" fill="#2563eb">Hand</text><text class="small" x="380" y="270" fill="#e04c4c">Cursor</text>
+<text class="small" x="80" y="400">IGE: hand vs target</text><text class="small" x="80" y="425">EGE: cursor vs hand</text><text class="micro" x="80" y="488">Illustrative angles (not to scale)</text>
+<rect class="panel" x="595" y="126" rx="18" width="555" height="400"/>
+<text class="heading" x="625" y="172">B. Single-trial adaptation (triplet)</text>
+<g transform="translate(665,220)"><rect width="130" height="234" rx="12" fill="#f1f5f9"/><text x="65" y="29" font-size="18" text-anchor="middle" font-weight="700">t − 1</text><text x="65" y="53" text-anchor="middle" class="micro">Null trial</text><circle cx="65" cy="88" r="7" fill="#22c55e"/><circle cx="65" cy="198" r="7" fill="#eab308"/><line x1="65" y1="190" x2="65" y2="97" stroke="#2563eb" stroke-width="4"/><text x="65" y="223" text-anchor="middle" class="micro">Pre</text></g>
+<g transform="translate(809,220)"><rect width="130" height="234" rx="12" fill="#fff0f0"/><text x="65" y="29" font-size="18" text-anchor="middle" font-weight="700">t</text><text x="65" y="53" text-anchor="middle" class="micro">Perturbation</text><circle cx="65" cy="88" r="7" fill="#22c55e"/><circle cx="65" cy="198" r="7" fill="#eab308"/><line x1="65" y1="190" x2="65" y2="97" stroke="#2563eb" stroke-width="4"/><line x1="65" y1="190" x2="90" y2="102" stroke="#e04c4c" stroke-width="4"/><text x="65" y="223" text-anchor="middle" class="micro">Rotate cursor</text></g>
+<g transform="translate(953,220)"><rect width="130" height="234" rx="12" fill="#f1f5f9"/><text x="65" y="29" font-size="18" text-anchor="middle" font-weight="700">t + 1</text><text x="65" y="53" text-anchor="middle" class="micro">Null trial</text><circle cx="65" cy="88" r="7" fill="#22c55e"/><circle cx="65" cy="198" r="7" fill="#eab308"/><line x1="65" y1="190" x2="44" y2="99" stroke="#2563eb" stroke-width="4"/><text x="65" y="223" text-anchor="middle" class="micro">Post</text></g>
+<rect x="50" y="549" width="1100" height="118" rx="16" fill="#e8effd"/>
+<text x="77" y="585" font-size="23" font-weight="700">Adaptation(t) = reach angle(t + 1) − reach angle(t − 1)</text>
+<text x="77" y="615" class="small">Key question: Does the following reach change with EGE (external rotation), but not with IGE (motor variability)?</text>
+<text x="77" y="644" class="micro">Original explanatory diagram based on Kim, Chua &amp; Hu (2025), Proc. R. Soc. B, doi:10.1098/rspb.2025.1320</text>
+</svg>
