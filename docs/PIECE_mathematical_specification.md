@@ -124,6 +124,37 @@ These are **behavioral data checks**, not a validation of the PIECE model likeli
 
 ## 8. Fit and parameter verification checklist
 
+### Visual Uncertainty Parameters
+
+Source: Zhang et al. (2024), eLife 13:RP94608.
+
+Published main-text regression coefficients:
+
+| Parameter | Value | Description |
+|---|---:|---|
+| alpha | 1.853 | Baseline visual uncertainty |
+| beta | 0.309 | Increase in uncertainty with visual error magnitude |
+
+Visual uncertainty equation:
+
+$$
+\sigma_{v,t} = \alpha + \beta e_t
+$$
+
+For a visual error magnitude of 5 degrees:
+
+$$
+\sigma_{v,t} = 1.853 + 0.309(5) = 3.398
+$$
+
+**Verification status:**
+
+- The values 1.853 and 0.309 are reported in Zhang et al. (2024).
+- Whether these values match the Table S1 mean parameters used in the PIECE study remains to be verified.
+- These values must not yet be treated as confirmed fixed parameters of the original PIECE implementation.
+
+
+
 Before implementing a claim of exact paper reproduction, verify against the official `src` package and `experiment-1/scripts/model-fitting.ipynb`:
 
 - [ ] Exact distribution and prior parameters for $x_h$, $r$, and $C$.
